@@ -1,0 +1,57 @@
+{% extends "base.jinja2" %}
+{% import "_macros.jinja2" as macros %}
+
+{% block title %} All branches {% endblock %}
+
+{% block content %}
+    <h2>List of all registered branches</h2>
+
+    Total: {{ branches.total }}
+
+    <p>
+        <a href="{{url_for('create_branch_page')}}"
+            class="btn btn-outline-primary"
+        >
+            Create branch
+        </a>
+    </p>
+
+    {% for branch in branches.branches %}
+    <p>
+
+        {{ macros.model_table(branch) }}
+
+        <div class="btn-group">
+            {% if branch.scopes.document_identification %}
+                <a
+                    href="{{url_for('validate-barcode-page', branch_id=branch.id)}}"
+                    class="btn btn-outline-primary"
+                >
+                    Validate document by barcode
+                </a>
+            {% endif %}
+
+            {% if branch.scopes.sharing %}
+                <a
+                    href="{{url_for('share-barcode-page', branch_id=branch.id)}}"
+                    class="btn btn-outline-primary"
+                >
+                    Request document by barcode
+                </a>
+            {% endif %}
+            <a
+                href="{{url_for('offers_page', branch_id=branch.id)}}"
+                class="btn btn-outline-primary"
+            >
+                Offers
+            </a>
+            <a
+                href="{{url_for('delete_branch', branch_id=branch.id)}}"
+                class="btn btn-outline-danger"
+            >
+                Delete
+            </a>
+        </div>
+    </p>
+    {% endfor %}
+{% endblock %}

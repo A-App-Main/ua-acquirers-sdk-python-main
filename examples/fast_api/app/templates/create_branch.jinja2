@@ -1,0 +1,46 @@
+{% extends "base.jinja2" %}
+{% import "_macros.jinja2" as macros %}
+
+{% block title %} Create branch {% endblock %}
+
+{% block content %}
+    <h2>Create new branch</h2>
+
+    <form action="#" method="post">
+        {% for field in 'Name Email Region District Location Street House CustomFullName CustomFullAddress'.split() %}
+        <div class="row">
+            <label for="{{field}}" class="col-sm-2 col-form-label">{{field}}</label>
+            <div class="col-sm-7">
+                <input type="text" class="form-control" id="{{field}}" name="{{field.lower()}}">
+            </div>
+        </div>
+        {% endfor %}
+
+        <br>
+        {{
+            macros.checkbox_macro(
+                label='Sharing',
+                values=document_types_for_sharing,
+                indent=2,
+            )
+        }}
+        <br>
+        {{
+            macros.checkbox_macro(
+                label='DocumentIdentification',
+                values=document_types_for_identification,
+                indent=2,
+            )
+        }}
+        <br>
+        {{
+            macros.checkbox_macro(
+                label='DiiaIDAction',
+                values=diia_id_types,
+                indent=2,
+            )
+        }}
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+{% endblock %}

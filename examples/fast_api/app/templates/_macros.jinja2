@@ -1,0 +1,51 @@
+{% macro prepare_scopes(scopes) %}
+    {% for field, values in scopes.items() if values != None %}
+        {{field}}:
+        {% for value in values %}
+            {{ value.value }}
+            {{ "," if not loop.last }}
+        {% endfor %}
+        <br>
+    {% endfor %}
+{% endmacro %}
+
+{% macro model_table(model) %}
+    <table class="table table-bordered table-striped table-sm">
+        {% for field, value in model.dict().items() %}
+        <tr>
+            <td>{{ field }}</td>
+            {% if field == 'scopes' %}
+                <td>{{ prepare_scopes(value) }}</td>
+            {% else %}
+                <td>{{ value }}</td>
+            {% endif %}
+        </tr>
+        {% endfor %}
+    </table>
+{% endmacro %}
+
+
+{% macro checkbox_macro(label, values, indent=1) %}
+    <div class="form-group row">
+        <label for="name" class="col-sm-{{indent}} control-label">{{label}}</label>
+        <div class="col-sm-5 checkbox-wrapper">
+
+          {% for value in values %}
+              <div class="checkbox-inline">
+                  <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="checkbox_{{label}}_{{value.value}}"
+                      name="{{label}}"
+                      value="{{value.value}}"
+                  >
+                  <label
+                    class="form-check-label"
+                    for="checkbox_{{label}}_{{value.value}}">
+                    {{value.value}}
+                  </label>
+              </div>
+          {% endfor %}
+        </div>
+    </div>
+{% endmacro %}

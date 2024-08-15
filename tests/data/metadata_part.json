@@ -1,0 +1,27 @@
+{
+  "requestId":"abc1234d-1234-1234-1234-1a2b3c4d5e6f",
+  "documentTypes":["foreign-passport"],
+  "data":{
+    "foreign-passport":{
+      "taxpayerNumber":"1234567890",
+      "residenceUA":"УКРАЇНА М. КИЇВ ВУЛ. ЦИФРОВІЗАЦІЇ БУД. 25 КВ. 18",
+      "docNumber":"FF123456",
+      "genderUA":"Ж",
+      "nationalityUA":"Україна",
+      "lastNameUA":"ДІЯ",
+      "firstNameUA":"НАДІЯ",
+      "middleNameUA":"ВОЛОДИМИРІВНА",
+      "birthday":"24.01.1980",
+      "birthPlaceUA":"М. КИЇВ",
+      "issueDate":"22.11.2017",
+      "expirationDate":"22.11.2027",
+      "recordNumber":"12345678-12345",
+      "departmentUA":"1234",
+      "countryCode":"UKR",
+      "genderEN":"F",
+      "lastNameEN":"DIIA",
+      "firstNameEN":"NADIIA",
+      "departmentEN":"1234"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{% extends "base.jinja2" %}
+{% block title %} Requesting/validate document by barcode {% endblock %}
+
+{% block content %}
+    <h2>Requesting/validate document by barcode</h2>
+
+    <form action="#" method="post"></p>
+        <div class="row">
+            <label for="Barcode" class="col-sm-1 col-form-label">Barcode</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" id="Barcode" name="barcode">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "base.jinja2" %}
+{% block title %} Share documents by deeplink {% endblock %}
+
+{% block content %}
+    DeepLink: <a href="{{ deeplink }}">{{ deeplink }}</a><br>
+    RequestID: {{ request_id }}<br>
+
+    <p>
+        <img src="data:image/png;base64,{{qr_base64}}">
+    </p>
+
+    After processing qr-code in Diia Application, you can
+    <a href="{{ download_url }}"> Download results. </a>
+
+    <br>
+    The link is one-time and available 60 seconds after sharing.
+
+{% endblock %}

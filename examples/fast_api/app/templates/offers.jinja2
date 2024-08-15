@@ -1,0 +1,55 @@
+{% extends "base.jinja2" %}
+{% import "_macros.jinja2" as macros %}
+
+{% block title %} All offers {% endblock %}
+
+{% block content %}
+    <h2>List of all registered offers on branch</h2>
+
+    BranchID: {{ branch_id }} <br>
+    Total: {{ offers.total }}
+    <p>
+        <a href="{{url_for('create_offer_page', branch_id=branch_id)}}"
+            class="btn btn-outline-primary"
+        >
+            Create offer
+        </a>
+    </p>
+    {% for offer in offers.offers %}
+    <p>
+        {{ macros.model_table(offer) }}
+
+        <div class="btn-group">
+            {% if offer.scopes.sharing %}
+                <a href="{{url_for('share_deeplink', branch_id=branch_id, offer_id=offer.id)}}"
+                    class="btn btn-outline-primary"
+                >
+                    Share documents by deeplink
+                </a>
+
+            {% elif offer.scopes.diia_id %}
+                {% if offer.scopes.can_sign() %}
+                    <a href="{{url_for('sign_deeplink_page', branch_id=branch_id, offer_id=offer.id)}}"
+                        class="btn btn-outline-primary"
+                    >
+                        Sign document
+                    </a>
+                {% endif %}
+                {% if offer.scopes.can_auth() %}
+                    <a href="{{url_for('auth_deeplink', branch_id=branch_id, offer_id=offer.id)}}"
+                        class="btn btn-outline-primary"
+                    >
+                        Auth
+                    </a>
+                {% endif %}
+            {% endif %}
+
+            <a href="{{url_for('delete_offer', branch_id=branch_id, offer_id=offer.id)}}"
+                class="btn btn-outline-danger"
+            >
+                Delete offer
+            </a>
+        </div>
+    </p>
+    {% endfor %}
+{% endblock %}

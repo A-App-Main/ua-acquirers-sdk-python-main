@@ -1,0 +1,6 @@
+class BaseDiiaClientException(Exception):
+    ...
+
+
+class DiiaClientException(BaseDiiaClientException):
+    ...

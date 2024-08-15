@@ -1,0 +1,152 @@
+{
+  "requestId":"abc1234d-1234-1234-1234-1a2b3c4d5e6f",
+  "barcode":"1213187292345",
+  "documentTypes":[
+    "foreign-passport",
+    "internal-passport",
+    "taxpayer-card",
+    "reference-internally-displaced-person",
+    "birth-certificate",
+    "driver-license",
+    "vehicle-license"
+  ],
+  "data":{
+    "foreign-passport":[{
+      "taxpayerNumber":"1234567890",
+      "residenceUA":"УКРАЇНА М. КИЇВ ВУЛ. ЦИФРОВІЗАЦІЇ БУД. 25 КВ. 18",
+      "docNumber":"FF123456",
+      "genderUA":"Ж",
+      "nationalityUA":"Україна",
+      "lastNameUA":"ДІЯ",
+      "firstNameUA":"НАДІЯ",
+      "middleNameUA":"ВОЛОДИМИРІВНА",
+      "birthday":"24.01.1980",
+      "birthPlaceUA":"М. КИЇВ",
+      "issueDate":"22.11.2017",
+      "expirationDate":"22.11.2027",
+      "recordNumber":"12345678-12345",
+      "departmentUA":"1234",
+      "countryCode":"UKR",
+      "genderEN":"F",
+      "lastNameEN":"DIIA",
+      "firstNameEN":"NADIIA",
+      "departmentEN":"1234"
+    }],
+    "internal-passport":[{
+      "taxpayerNumber":"1234567890",
+      "residenceUA":"УКРАЇНА М. КИЇВ ВУЛ. ЦИФРОВІЗАЦІЇ БУД. 25 КВ. 18",
+      "docNumber":"123456789",
+      "genderUA":"Ж",
+      "nationalityUA":"Україна",
+      "lastNameUA":"ДІЯ",
+      "firstNameUA":"НАДІЯ",
+      "middleNameUA":"ВОЛОДИМИРІВНА",
+      "birthday":"24.01.1980",
+      "birthPlaceUA":"М. КИЇВ УКРАЇНА",
+      "issueDate":"13.12.2009",
+      "expirationDate":"13.12.2023",
+      "recordNumber":"12345678-12345",
+      "department":"1234",
+      "genderEN":"F",
+      "lastNameEN":"DIIA",
+      "firstNameEN":"NADIIA"
+    }],
+    "taxpayer-card":[{
+      "creationDate":"08.09.2020",
+      "docNumber":"1234567890",
+      "lastNameUA":"Дія",
+      "firstNameUA":"Надія",
+      "middleNameUA":"Володимирівна",
+      "birthday":"24.01.1980"
+    }],
+    "reference-internally-displaced-person":[{
+      "docType":"person | accompanied",
+      "docNumber":"123-456",
+      "department":"М.ХМІЛЬНИК ВІННИЦЬКА ОБЛ.",
+      "lastName":"ДІЯ",
+      "firstName":"НАДІЯ",
+      "middleName":"ВОЛОДИМИРІВНА",
+      "issueDate":"05.05.2015 00.00.00.000",
+      "birthDate":"07.02.1973 00.00.00.000",
+      "gender":"Жінка",
+      "legalRepresentative":"ДІЯ ВІКТОРІЯ КИРИЛІВНА",
+      "docIdentity":{
+        "number":"ЕМ123456",
+        "issueDate":"16.06.2000 00.00.00.000",
+        "department":"Антрацитівським МВУМВС України в Лугансь"
+      },
+      "address":{
+        "birth":"м. Антрацит Луганська область",
+        "registration":"94605, Луганська обл, , м. Антрацит, вул. ОВОЩНАЯ, буд. 19а",
+        "actual":"22000, Вінницька обл., м. Хмільник, вул. ФРУКТОВА, буд. 56, кв. 7"
+      }
+    }],
+    "birth-certificate":[{
+      "id":"string",
+      "document":{
+        "serie":"string",
+        "number":"string",
+        "department":"string",
+        "issueDate":"string"
+      },
+      "child":{
+        "lastName":"string",
+        "firstName":"string",
+        "middleName":"string",
+        "birthDate":"string",
+        "birthPlace":"string",
+        "currentRegistrationPlaceUA":"string",
+        "citizenship":"string"
+      },
+      "parents":{
+        "father":{
+          "fullName":"string",
+          "citizenship":"string"
+        },
+        "mother":{
+          "fullName":"string",
+          "citizenship":"string"
+        }
+      },
+      "act":{
+        "name":"string",
+        "registrationPlace":"string"
+      }
+    }],
+    "driver-license": [{
+      "expirationDate": "20.05.2024",
+      "categories": "D, B",
+      "serialNumber": "AA0000DI",
+      "lastNameUA": "Ivanov",
+      "firstNameUA": "Ivan",
+      "middleNameUA": "Ivanovich",
+      "birthday": "24.08.1991",
+      "department": "FNT 5326"
+    }],
+    "vehicle-license": [{
+      "licensePlate": "АА0000АА",
+      "docNumber": "ВХР 123456",
+      "brand": "ZAZ",
+      "model": "Vida",
+      "vin": "DIIA2019FORPEOPLE",
+      "color": "Зелений",
+      "kindBody": "Легковий хатчбек",
+      "makeYear": "2019",
+      "totalWeight": "1510 кг",
+      "ownWeight": "1045 кг",
+      "capacity": "999",
+      "fuel": "Бензин",
+      "rankCategory": "В",
+      "seatsNumber": "5",
+      "standingNumber": "Не вказано",
+      "dateFirstReg": "22 Жовтня 2017",
+      "dateReg": "22 Жовтня 2017",
+      "ownerType": "owner | properUser",
+      "lastNameUA": "Дієвий",
+      "firstNameUA": "Натан",
+      "middleNameUA": "Олександрович",
+      "birthday": "24.08.1991",
+      "address": "вулиця Михайла Грушевського, 12/2, Київ, 01008"
+    }]
+  }
+}

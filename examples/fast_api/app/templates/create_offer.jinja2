@@ -1,0 +1,49 @@
+{% extends "base.jinja2" %}
+{% import "_macros.jinja2" as macros %}
+
+{% block title %} Create Offer {% endblock %}
+
+{% block content %}
+    <h2>Create new offer on branch</h2>
+    <p>
+        BranchID: {{ branch_id }}
+    </p>
+
+    <form action="#" method="post">
+        <div class="row">
+            <label for="Name" class="col-sm-1 col-form-label">Name</label>
+            <div class="col-sm-7">
+                <input type="text" class="form-control" id="Name" name="name">
+            </div>
+        </div>
+
+        <div class="row">
+            <label for="ReturnLink" class="col-sm-1 col-form-label">ReturnLink</label>
+            <div class="col-sm-7">
+                <input type="text" class="form-control" id="ReturnLink" name="returnLink">
+            </div>
+        </div>
+
+        <br>
+        {% if scopes_sharing %}
+            {{
+                macros.checkbox_macro(
+                    label='OfferScore',
+                    values=scopes_sharing,
+                )
+            }}
+        {% endif %}
+
+        <br>
+        {% if scopes_diia_id %}
+            {{
+                macros.checkbox_macro(
+                    label='DiiaIDAction',
+                    values=scopes_diia_id,
+                )
+            }}
+        {% endif %}
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+{% endblock %}
