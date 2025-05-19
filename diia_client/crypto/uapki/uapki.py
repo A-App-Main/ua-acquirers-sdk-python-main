@@ -106,11 +106,12 @@ class UAPKICryptoService(AbstractCryptoService):
                 f"{msg}. Answer doesn't contain field 'result' or 'bytes'"
             )
 
-    def decrypt(self, encrypted_data: str) -> str:
+    def decrypt(self, encrypted_data: str, signature: Optional[str]) -> str:
         """Decrypt data.
 
         Args:
             encrypted_data: Base64 encoded encrypted data
+            signature: Irrelevant in this context
 
         Returns:
             Base64 encoded decrypted content
@@ -123,11 +124,12 @@ class UAPKICryptoService(AbstractCryptoService):
         self._check_result(_data, "Decryption error")
         return _data["result"]["bytes"]
 
-    def calc_hash(self, data: str) -> str:
+    def calc_hash(self, data: str, algorithm: Optional[str]) -> str:
         """Hash data.
 
         Args:
             data: Base64 encoded data.
+            algorithm: Irrelevant in this context
 
         Returns:
             Base64 hash.

@@ -29,6 +29,7 @@ def make_diia_client(settings: Settings) -> Diia:
 
     return Diia(
         acquirer_token=settings.acquirer_token,
+        auth_acquirer_token=settings.auth_acquirer_token,
         diia_host=settings.host,
         http_client=http_client,
         crypto_service=crypto_service,

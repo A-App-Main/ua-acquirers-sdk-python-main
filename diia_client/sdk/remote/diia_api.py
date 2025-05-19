@@ -10,10 +10,15 @@ from diia_client.types import DataDict, StrDict
 
 class DiiaApi:
     def __init__(
-        self, *, acquirer_token: str, diia_host: str, http_client: AbstractHTTPCLient
+        self,
+        *,
+        acquirer_token: str,
+        auth_acquirer_token: str,
+        diia_host: str,
+        http_client: AbstractHTTPCLient,
     ):
         self.session_token_service = SessionTokenService(
-            acquirer_token, diia_host, http_client
+            acquirer_token, auth_acquirer_token, diia_host, http_client
         )
         self.diia_host = diia_host
         self.http_client = http_client

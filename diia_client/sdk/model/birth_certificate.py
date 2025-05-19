@@ -16,13 +16,13 @@ class Child(BaseModel):
     middle_name: str
     birth_date: str
     birth_place: str
-    current_registration_place_ua: Optional[str]
-    citizenship: Optional[str]
+    current_registration_place_ua: Optional[str] = None
+    citizenship: Optional[str] = None
 
 
 class Parent(BaseModel):
     full_name: str
-    citizenship: Optional[str]
+    citizenship: Optional[str] = None
 
 
 class Parents(BaseModel):

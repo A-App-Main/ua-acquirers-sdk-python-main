@@ -54,7 +54,7 @@ class Mode(Enum):
     clear_branches = "clear_branches"
 
 
-def main(*, mode: Mode, acquirer_token: str) -> None:
+def main(*, mode: Mode, acquirer_token: str, auth_acquirer_token: str) -> None:
     print(f"Run in mode: {mode}")
 
     http_client = RequestsHTTPClient()
@@ -63,6 +63,7 @@ def main(*, mode: Mode, acquirer_token: str) -> None:
 
     diia = Diia(
         acquirer_token=acquirer_token,
+        auth_acquirer_token=auth_acquirer_token,
         diia_host=DIIA_HOST,
         http_client=http_client,
         crypto_service=crypto_service,

@@ -5,7 +5,7 @@ from diia_client.models import BaseModel
 
 
 class BranchScopes(BaseModel):
-    sharing: Optional[List[DocumentType]]
-    document_identification: Optional[List[DocumentType]]
-    identification: Optional[List[str]]
-    diia_id: Optional[List[DiiaIDAction]]
+    sharing: Optional[List[DocumentType]] = None
+    document_identification: Optional[List[DocumentType]] = None
+    identification: Optional[List[str]] = None
+    diia_id: Optional[List[DiiaIDAction]] = None

@@ -9,9 +9,14 @@ SESSION_TOKEN_TIME_TO_LIVE = 2 * 3600 - 5
 
 class SessionTokenService:
     def __init__(
-        self, acquirer_token: str, diia_host: str, http_client: AbstractHTTPCLient
+        self,
+        acquirer_token: str,
+        auth_acquirer_token: str,
+        diia_host: str,
+        http_client: AbstractHTTPCLient,
     ):
         self.acquirer_token = acquirer_token
+        self.auth_acquirer_token = auth_acquirer_token
         self.diia_host = diia_host
         self.http_client = http_client
         self.session_token_obtain_time = 0
@@ -37,7 +42,7 @@ class SessionTokenService:
                 url=url,
                 headers={
                     "Accept": "application/json",
-                    "Authorization": f"Bearer {self.acquirer_token}",
+                    "Authorization": f"Basic {self.auth_acquirer_token}",
                 },
             )
             return result["token"]

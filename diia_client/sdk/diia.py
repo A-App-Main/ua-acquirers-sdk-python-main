@@ -26,6 +26,7 @@ class Diia:
         self,
         *,
         acquirer_token: str,
+        auth_acquirer_token: str,
         diia_host: str,
         http_client: AbstractHTTPCLient,
         crypto_service: AbstractCryptoService,
@@ -40,7 +41,10 @@ class Diia:
 
         """
         diia_api = DiiaApi(
-            acquirer_token=acquirer_token, diia_host=diia_host, http_client=http_client
+            acquirer_token=acquirer_token,
+            auth_acquirer_token=auth_acquirer_token,
+            diia_host=diia_host,
+            http_client=http_client,
         )
 
         self.document_service = DocumentService(crypto_service)

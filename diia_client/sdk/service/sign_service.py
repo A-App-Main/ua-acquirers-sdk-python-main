@@ -42,7 +42,7 @@ class SignService:
             HashedFile(
                 filename=file.filename,
                 filehash=self.crypto_service.calc_hash(
-                    base64.b64encode(file.data).decode()
+                    base64.b64encode(file.data).decode(), algorithm=None
                 ),
             )
             for file in files
@@ -61,10 +61,13 @@ class SignService:
         offer_id: str,
         request_id: str,
         return_link: Optional[str] = None,
+        algorithm: Optional[str] = None,
     ) -> AuthDeepLink:
 
-        request_id_hash = self.crypto_service.calc_hash(
-            base64.b64encode(request_id.encode()).decode()
+        request_id_hash = str(
+            base64.b64encode(
+                self.crypto_service.calc_hash(request_id, algorithm=algorithm).encode()
+            )
         )
 
         deep_link = self.diia_api.get_deep_link(

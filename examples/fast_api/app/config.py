@@ -1,6 +1,7 @@
 from typing import Optional
 
-from pydantic import BaseSettings, Field
+from pydantic import Field
+from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
@@ -14,6 +15,7 @@ class Settings(BaseSettings):
     # Basic Diia
     host: str = Field(...)
     acquirer_token: str = Field(...)
+    auth_acquirer_token: str = Field(...)
     # User's key data
     key: str = Field(...)
     password: str = Field(...)
@@ -23,9 +25,7 @@ class Settings(BaseSettings):
     diia_certificate: str = Field(...)
     diia_certificate_kep: str = Field(...)
     diia_issuer_certificate: Optional[str] = Field(None)
-
-    class Config:
-        env_prefix = "diia_"
+    model_config = SettingsConfigDict(env_prefix="diia_")
 
 
 settings = Settings()

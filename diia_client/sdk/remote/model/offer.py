@@ -10,5 +10,5 @@ class Offer(BaseModel):
     id: str = Field(default="", alias="_id")
 
     name: str
-    return_link: Optional[str]
+    return_link: Optional[str] = None
     scopes: OfferScopes

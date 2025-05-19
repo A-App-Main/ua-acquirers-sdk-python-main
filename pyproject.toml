@@ -18,25 +18,26 @@ requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.dependencies]
-python = "^3.7"
-pydantic = {version = "<2"}
+python = "^3.9"
+pydantic = "^2.11.4"
 requests = {version = "^2", optional = true}
 types-requests = {version = "^2", optional = true}
 
 [tool.poetry.extras]
 requests = ["requests", "types-requests"]
 
-[tool.poetry.dev-dependencies]
+[tool.poetry.group.dev.dependencies]
 requests = {version = "^2", optional = false}
 types-requests = {version = "^2", optional = false}
-mypy = "^0.942"
+mypy = "^1.5"
 pycodestyle = "^2.8.0"
-flake8 = "^4.0.1"
-pyflakes = "^2.4.0"
-black = "^22.3.0"
 isort = "^5.10.1"
 pytest = "^7.1.1"
 PyQRCode = {extras = ["png"], version = "^1.2.1"}
+pydantic = "^2.0"
+pyflakes = "^3.3.2"
+flake8 = "^7.2.0"
+black = "^25.1.0"
 
 [tool.isort]
 profile = "black"

@@ -15,8 +15,7 @@ class AbstractHTTPCLient(ABC):
         params: Optional[DataDict] = None,
         headers: Optional[StrDict] = None,
         timeout: float = DEFAULT_TIMEOUT,
-    ) -> DataDict:
-        ...
+    ) -> DataDict: ...
 
     @abstractmethod
     def post(
@@ -26,8 +25,7 @@ class AbstractHTTPCLient(ABC):
         params: Optional[DataDict] = None,
         headers: Optional[StrDict] = None,
         timeout: float = DEFAULT_TIMEOUT,
-    ) -> DataDict:
-        ...
+    ) -> DataDict: ...
 
     @abstractmethod
     def put(
@@ -37,8 +35,7 @@ class AbstractHTTPCLient(ABC):
         params: Optional[DataDict] = None,
         headers: Optional[StrDict] = None,
         timeout: float = DEFAULT_TIMEOUT,
-    ) -> DataDict:
-        ...
+    ) -> DataDict: ...
 
     @abstractmethod
     def delete(
@@ -47,5 +44,4 @@ class AbstractHTTPCLient(ABC):
         params: Optional[DataDict] = None,
         headers: Optional[StrDict] = None,
         timeout: float = DEFAULT_TIMEOUT,
-    ) -> None:
-        ...
+    ) -> None: ...

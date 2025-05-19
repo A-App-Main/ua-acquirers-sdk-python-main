@@ -1,6 +1,7 @@
 import re
 
 from pydantic import BaseModel as PydanticBaseModel
+from pydantic import ConfigDict
 
 
 ua_suffix_regex = re.compile("_ua$")
@@ -19,7 +20,6 @@ def to_camel(string: str) -> str:
 
 
 class BaseModel(PydanticBaseModel):
-    class Config:
-        alias_generator = to_camel
-        allow_population_by_field_name = True
-        validate_assignment = True
+    model_config = ConfigDict(
+        alias_generator=to_camel, populate_by_name=True, validate_assignment=True
+    )

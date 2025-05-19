@@ -23,7 +23,7 @@ Use [poetry](https://github.com/sdispater/poetry) to manage dependencies
 poetry install
 
 poetry run isort diia_client
-poetry run black -t py37 diia_client
+poetry run black -t py313 diia_client
 poetry run flake8 diia_client
 poetry run mypy diia_client
 poetry run pytest

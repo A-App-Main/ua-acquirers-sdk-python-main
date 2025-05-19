@@ -5,8 +5,8 @@ from diia_client.models import BaseModel
 
 
 class OfferScopes(BaseModel):
-    sharing: Optional[List[DocumentType]]
-    diia_id: Optional[List[DiiaIDAction]]
+    sharing: Optional[List[DocumentType]] = None
+    diia_id: Optional[List[DiiaIDAction]] = None
 
     def can_sign(self) -> bool:
         if not self.diia_id:

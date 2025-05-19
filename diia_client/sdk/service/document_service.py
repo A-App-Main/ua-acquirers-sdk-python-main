@@ -46,13 +46,13 @@ class DocumentService:
 
         decoded_files = []
         for file in encoded_files:
-            body = self.crypto_service.decrypt(encrypted_data=file.data)
+            body = self.crypto_service.decrypt(encrypted_data=file.data, signature=None)
             filename = file.filename.rstrip(".p7s.p7e")
             decoded_files.append(
                 DecodedFile(filename=filename, data=base64.b64decode(body))
             )
 
-        meta_b64 = self.crypto_service.decrypt(encoded_json_data)
+        meta_b64 = self.crypto_service.decrypt(encoded_json_data, signature=None)
         meta = json.loads(base64.b64decode(meta_b64))
         metadata = Metadata(**normalize_meta(meta))
 
