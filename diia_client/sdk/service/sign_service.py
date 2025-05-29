@@ -65,7 +65,7 @@ class SignService:
     ) -> AuthDeepLink:
 
         request_id_hash = self.crypto_service.calc_hash(
-            base64.b64encode(request_id.encode()).decode(),
+            request_id,
             algorithm = algorithm
         )
 
