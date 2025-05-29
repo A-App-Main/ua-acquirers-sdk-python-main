@@ -64,10 +64,9 @@ class SignService:
         algorithm: Optional[str] = None,
     ) -> AuthDeepLink:
 
-        request_id_hash = str(
-            base64.b64encode(
-                self.crypto_service.calc_hash(request_id, algorithm=algorithm).encode()
-            )
+        request_id_hash = self.crypto_service.calc_hash(
+            base64.b64encode(request_id.encode()).decode(),
+            algorithm = algorithm
         )
 
         deep_link = self.diia_api.get_deep_link(
